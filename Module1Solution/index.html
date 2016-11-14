@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" ng-app="MsgApp">
+  <head>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+      .message { font-size: 1.3em; font-weight: bold;}
+    </style>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/script.js"></script>
+  </head>
+<body>
+   <div class="container" ng-controller="MsgController">
+     <h1>Lunch Checker</h1>
+         <div class="form-group">
+             <input ng-model="menu" id="lunch-menu" type="text"
+             class="form-control" style="border: 1px solid {{msgColor}}">
+             <span>Empty items (no value between commas) are NOT included in the count.</span>
+         </div>
+         <div class="form-group">
+             <button class="btn btn-default" ng-click="display()">Check If Too Much</button>
+         </div>
+         <div class="form-group message" style="color:{{msgColor}}">
+           <!-- Your message can go here. -->
+            {{message}}
+         </div>
+   </div>
+
+</body>
+</html>

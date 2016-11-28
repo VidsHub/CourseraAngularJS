@@ -38,19 +38,27 @@
 		ctrl.output="";
 
 
-		ctrl.findList = function() {
-			var promise = MenuSearchService.getMatchedMenuItems(ctrl.searchTerm);
-			promise.then(function(response) {
-				ctrl.found=response;
-				console.log(ctrl.found);
-				if(ctrl.found.length==0) {
-					ctrl.output="Nothing Found!"
-				}
-				else {
-					ctrl.output="";
-				}
 
-			})
+
+		ctrl.findList = function() {
+			if(ctrl.searchTerm.trim()=="") {
+				ctrl.output="Nothing Found!";
+			}
+			else {
+
+				var promise = MenuSearchService.getMatchedMenuItems(ctrl.searchTerm);
+				promise.then(function(response) {
+					ctrl.found=response;
+					console.log(ctrl.found);
+					if(ctrl.found.length==0) {
+						ctrl.output="Nothing Found!"
+					}
+					else {
+						ctrl.output="";
+					}
+
+				})
+			}
 		}
 
 		ctrl.removeItem = function(index) {

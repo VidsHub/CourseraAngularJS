@@ -1,0 +1,37 @@
+
+
+<div ng-show="{{myInfoCtrl.registered}}">
+	<h2>My Info</h2>
+	<div>
+		First Name: {{myInfoCtrl.userInfo.fname}} <br>
+		Last Name: {{myInfoCtrl.userInfo.lname}} <br>
+		Email: {{myInfoCtrl.userInfo.email}} <br>
+		Phone: {{myInfoCtrl.userInfo.phone}} <br>
+		Favorite Dish: {{myInfoCtrl.userInfo.favdish}} <br>
+		Fav Dish: {{myInfoCtrl.userInfo.favitem.name}}
+	</div>
+
+<!--	<div class="menu-item-tile col-sm-6"> -->
+  <div class="row">
+    <div class="col-sm-5">
+      <div class="menu-item-photo">
+        <div>{{myInfoCtrl.userInfo.favitem.short_name}}</div>
+        <img class="img-responsive" width="250" height="150" ng-src="{{myInfoCtrl.basePath}}/images/{{myInfoCtrl.userInfo.favitem.short_name}}.jpg" alt="{{myInfoCtrl.userInfo.favitem.name}}">
+      </div>
+      <div class="menu-item-price">{{myInfoCtrl.userInfo.favitem.price_small | currency}}<span> {{myInfoCtrl.userInfo.favitem.small_portion_name}}</span> {{myInfoCtrl.userInfo.favitem.price_large | currency}} <span>{{myInfoCtrl.userInfo.favitem.large_portion_name}}</span></div>
+    </div>
+    <div class="menu-item-description col-sm-7">
+      <h3 class="menu-item-title">{{myInfoCtrl.userInfo.favitem.name}}</h3>
+      <p class="menu-item-details">{{myInfoCtrl.userInfo.favitem.description}}</p>
+    </div>
+  </div>
+  <hr class="visible-xs">
+</div>
+<!--</div> -->
+
+<div ng-show="{{myInfoCtrl.showMessage}}">
+	<h2>Not signed up yet! Sign up now!</h2>
+</div>
+
+
+
